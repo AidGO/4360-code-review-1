@@ -1,5 +1,3 @@
-
-
 from message import Message
 
 class UserInterface:

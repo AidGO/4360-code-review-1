@@ -8,13 +8,15 @@ class Account:
         return self.balance
 
     def withdraw(self, amount):
-        if self.balance >= amount:
+        if self.balance >= amount or amount >= 0: #added a check if user input was negative
             self.balance -= amount
             return self.balance
         else:
             raise InsufficientFundsException
     
     def deposit(self, amount):
-        self.balance += amount
-        return self.balance
-
+        if amount >= 0:         #added a check if user input was negative
+            self.balance += amount
+            return self.balance
+        else:
+            print("Invalid Input")

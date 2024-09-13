@@ -26,11 +26,9 @@ class User:
                 raise InvalidAccountNumberException
 
             account.deposit(amount)
-            return account.check_balance()
-        except BankingExcpetion as e:
-            message.print(e.message())
+            return account.check_balance()#removed except BankingExcpetion as e: message.print(e.message()), Doesn't actually print anything and function already has an error message
         except:
-            message.print("An error occurred")
+            message.print("An error occurred")   #Gets removed immediately by os.system('cls'), too fast to be read
 
     def withdraw(self, args):
         try:
@@ -42,11 +40,9 @@ class User:
                 raise InvalidAccountNumberException
 
             account.withdraw(amount)
-            return account.check_balance()
-        except BankingExcpetion as e:
-            message.print(e.message())
-        except:
-            message.print("An error occurred")
+            return account.check_balance()#removed except BankingExcpetion as e: message.print(e.message()), Doesn't actually print anything and function already has an error message
+        except:                                
+            message.print("An error occurred")   #Gets removed immediately by os.system('cls'), too fast to be read
 
 
     def transfer(self, args):
